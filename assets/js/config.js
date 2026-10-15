@@ -2,6 +2,6 @@
 window.AUBURN_LINKS = Object.freeze({
   garage61: "https://garage61.net/",
   iracing: "https://www.iracing.com/",
-  discord: "",
+  discord: "https://discord.gg/agmXvAtuN",
   notebook: "",
 });
