@@ -23,16 +23,36 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Auburn iRacing team hub home">
-        <span class="brand__mark" aria-hidden="true">AU</span>
-        <span class="brand__name">Auburn <strong>iRacing</strong></span>
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#resources">Team resources</a>
-        <a href="#in-the-works">In the works</a>
-        <a class="site-nav__cta" href="#resources">Get race ready <span aria-hidden="true">↘</span></a>
-      </nav>
+      <div class="site-header__identity">
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open site menu" aria-controls="site-drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="index.html" aria-label="Auburn iRacing team hub home">
+          <span class="brand__mark" aria-hidden="true">AU</span>
+          <span class="brand__name">Auburn <strong>iRacing</strong></span>
+        </a>
+      </div>
+      <a class="header-action" href="#resources">Team resources <span aria-hidden="true">↘</span></a>
     </header>
+
+    <button class="drawer-backdrop" type="button" data-menu-backdrop aria-label="Close site menu" hidden></button>
+    <aside class="site-drawer" id="site-drawer" aria-label="Site navigation" aria-hidden="true" inert>
+      <div class="site-drawer__heading">
+        <span class="eyebrow eyebrow--dark">Auburn iRacing</span>
+        <span class="site-drawer__label">Team hub</span>
+      </div>
+      <nav class="drawer-nav" aria-label="Main navigation">
+        <a class="drawer-link" href="index.html" data-drawer-link aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" /></svg>
+          <span>Home</span>
+        </a>
+        <a class="drawer-link" href="competition.html" data-drawer-link>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4" /><path d="M5 4h13l-2.5 4L18 12H5" /></svg>
+          <span>Competition</span>
+        </a>
+      </nav>
+      <p class="site-drawer__note">One team. One place to start.</p>
+    </aside>
 
     <main id="main-content">
       <section class="hero" id="top" aria-labelledby="hero-title">
@@ -89,11 +109,11 @@
             <span class="resource-card__status" data-link-status>Loading link…</span>
           </a>
 
-          <a class="resource-card" data-resource="notebook" aria-label="Competition notebook">
-            <span class="resource-card__top"><span class="resource-card__index">04 / PREPARE</span><span class="resource-card__arrow" aria-hidden="true">↗</span></span>
-            <span class="resource-card__title">Competition notebook</span>
-            <span class="resource-card__description">The team's shared notes for race preparation.</span>
-            <span class="resource-card__status" data-link-status>Loading link…</span>
+          <a class="resource-card resource-card--available" href="competition.html" aria-label="Open the competition team workspace">
+            <span class="resource-card__top"><span class="resource-card__index">04 / RACE DAY</span><span class="resource-card__arrow" aria-hidden="true">↗</span></span>
+            <span class="resource-card__title">Competition</span>
+            <span class="resource-card__description">Race notebook, fuel planning, and team-built tools.</span>
+            <span class="resource-card__status">Open competition hub ↗</span>
           </a>
         </div>
       </section>
@@ -109,6 +129,67 @@
             <div class="future-item"><span class="future-item__number">01</span><span>Fuel planning</span><span class="future-item__status">Planned</span></div>
             <div class="future-item"><span class="future-item__number">02</span><span>Stint sheets</span><span class="future-item__status">Planned</span></div>
             <div class="future-item"><span class="future-item__number">03</span><span>iRacing SDK integrations</span><span class="future-item__status">Exploring</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="socials section-wrap" id="socials" aria-labelledby="socials-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--dark">Off-track connections</p>
+            <h2 id="socials-title">Follow the team<span class="heading-period">.</span></h2>
+          </div>
+          <p class="section-heading__copy">Race updates, team moments, and videos from Auburn iRacing.</p>
+        </div>
+        <div class="social-links">
+          <a class="social-link" href="https://x.com/AUiRacing" target="_blank" rel="noopener noreferrer">
+            <span class="social-link__platform">X</span>
+            <span class="social-link__handle">@AUiRacing</span>
+            <span class="social-link__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/auiracing" target="_blank" rel="noopener noreferrer">
+            <span class="social-link__platform">Instagram</span>
+            <span class="social-link__handle">@auiracing</span>
+            <span class="social-link__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="social-link" href="https://www.youtube.com/@AuburniRacing" target="_blank" rel="noopener noreferrer">
+            <span class="social-link__platform">YouTube</span>
+            <span class="social-link__handle">@AuburniRacing</span>
+            <span class="social-link__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="sponsors" id="sponsors" aria-labelledby="sponsors-title">
+        <div class="sponsors__inner section-wrap">
+          <div class="section-heading sponsors__heading">
+            <div>
+              <p class="eyebrow eyebrow--light">Proud to race together</p>
+              <h2 id="sponsors-title">Our sponsors<span class="heading-period">.</span></h2>
+            </div>
+            <p class="section-heading__copy">We’re grateful for the partners who support Auburn iRacing.</p>
+          </div>
+          <div class="sponsor-grid">
+            <a class="sponsor-link" href="https://www.crawfordwillisgroup.com/" target="_blank" rel="noopener noreferrer">
+              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-link__name">Crawford &amp; Willis</span>
+              <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
+            </a>
+            <a class="sponsor-link" href="https://www.alabamapumper.com/" target="_blank" rel="noopener noreferrer">
+              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-link__name">Alabama Pumper</span>
+              <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
+            </a>
+            <a class="sponsor-link" href="https://mobincbhm.com/" target="_blank" rel="noopener noreferrer">
+              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-link__name">MOB Inc.</span>
+              <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
+            </a>
+            <a class="sponsor-link" href="https://www.theroofingdudes.com/" target="_blank" rel="noopener noreferrer">
+              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-link__name">The Roofing Dudes</span>
+              <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
+            </a>
           </div>
         </div>
       </section>

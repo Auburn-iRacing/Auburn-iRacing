@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Auburn iRacing competition resources and race-preparation tools." />
+    <meta name="theme-color" content="#0c2340" />
+    <title>Competition | Auburn iRacing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="site-header__identity">
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open site menu" aria-controls="site-drawer" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="index.html" aria-label="Auburn iRacing team hub home">
+          <span class="brand__mark" aria-hidden="true">AU</span>
+          <span class="brand__name">Auburn <strong>iRacing</strong></span>
+        </a>
+      </div>
+      <a class="header-action" href="index.html#resources">Team resources <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <button class="drawer-backdrop" type="button" data-menu-backdrop aria-label="Close site menu" hidden></button>
+    <aside class="site-drawer" id="site-drawer" aria-label="Site navigation" aria-hidden="true" inert>
+      <div class="site-drawer__heading">
+        <span class="eyebrow eyebrow--dark">Auburn iRacing</span>
+        <span class="site-drawer__label">Team hub</span>
+      </div>
+      <nav class="drawer-nav" aria-label="Main navigation">
+        <a class="drawer-link" href="index.html" data-drawer-link>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" /></svg>
+          <span>Home</span>
+        </a>
+        <a class="drawer-link" href="competition.html" data-drawer-link aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4" /><path d="M5 4h13l-2.5 4L18 12H5" /></svg>
+          <span>Competition</span>
+        </a>
+      </nav>
+      <p class="site-drawer__note">One team. One place to start.</p>
+    </aside>
+
+    <main id="main-content" class="competition-page">
+      <section class="competition-intro section-wrap" id="top" aria-labelledby="competition-title">
+        <p class="eyebrow eyebrow--dark">Race preparation workspace</p>
+        <h1 id="competition-title">Competition<span class="heading-period">.</span></h1>
+        <p>Race notes, planning tools, and team projects in one place.</p>
+      </section>
+
+      <div class="competition-content section-wrap">
+        <section class="notebook-panel" aria-labelledby="notebook-title">
+          <div class="notebook-panel__copy">
+            <p class="eyebrow eyebrow--dark">Team resource</p>
+            <h2 id="notebook-title">Competition notebook</h2>
+            <p>Shared race notes, event details, and preparation material will live here.</p>
+          </div>
+          <a class="button button--navy notebook-panel__link" data-resource="notebook" aria-label="Open competition notebook">
+            Open notebook <span aria-hidden="true">↗</span>
+            <span class="visually-hidden" data-link-status>Loading link…</span>
+          </a>
+        </section>
+
+        <section class="fuel-planner" aria-labelledby="fuel-title">
+          <div class="tool-heading">
+            <div>
+              <p class="eyebrow eyebrow--dark">Race strategy tool</p>
+              <h2 id="fuel-title">Fuel calculator</h2>
+            </div>
+            <span class="future-item__status">Planned</span>
+          </div>
+          <p class="fuel-planner__description">
+            A dedicated workspace for estimating fuel needs in both lap-count and timed races.
+          </p>
+          <div class="fuel-placeholder" aria-label="Reserved space for the future fuel calculator">
+            <div class="fuel-placeholder__topline"><span>Calculator workspace</span><span>Under development</span></div>
+            <div class="fuel-input-outline" aria-hidden="true">
+              <span>Current lap</span>
+              <span>Average fuel burn</span>
+              <span>Tank size</span>
+              <span>Race format</span>
+            </div>
+            <p>Planned for laps remaining and time remaining races.</p>
+          </div>
+        </section>
+
+        <section class="competition-projects" aria-labelledby="projects-title">
+          <div class="tool-heading">
+            <div>
+              <p class="eyebrow eyebrow--dark">Room to grow</p>
+              <h2 id="projects-title">Future projects</h2>
+            </div>
+            <p class="section-heading__copy">New team-built tools can take shape here.</p>
+          </div>
+          <div class="project-slots">
+            <div class="project-slot"><span class="project-slot__number">01</span><span>Project space</span><span class="future-item__status">Available</span></div>
+            <div class="project-slot"><span class="project-slot__number">02</span><span>Project space</span><span class="future-item__status">Available</span></div>
+            <div class="project-slot"><span class="project-slot__number">03</span><span>Project space</span><span class="future-item__status">Available</span></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--footer" href="index.html">
+        <span class="brand__mark" aria-hidden="true">AU</span>
+        <span class="brand__name">Auburn <strong>iRacing</strong></span>
+      </a>
+      <p>Made for the Auburn iRacing team.</p>
+      <a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
