@@ -1,9 +1,10 @@
-name: Deploy production site
+name: Deploy production and dev sites
 
 on:
   push:
     branches:
       - main
+      - dev
   workflow_dispatch:
 
 permissions:
@@ -12,27 +13,38 @@ permissions:
   id-token: write
 
 concurrency:
-  group: production-pages
+  group: auburn-iracing-pages
   cancel-in-progress: true
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Check out production source
+      - name: Check out production branch
         uses: actions/checkout@v4
+        with:
+          ref: main
+          path: _source/main
+
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: _source/dev
 
       - name: Enable and configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
 
-      - name: Build production site
-        run: bash scripts/build-static-site.sh . _site
+      - name: Build production site and dev preview
+        run: |
+          bash _source/main/scripts/build-static-site.sh _source/main _site
+          bash _source/dev/scripts/build-static-site.sh _source/dev _site/dev
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
