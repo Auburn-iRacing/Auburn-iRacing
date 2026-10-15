@@ -44,7 +44,7 @@ Open <http://localhost:8000> to preview locally. Push changes to `dev` (or a fea
 
 ## GitHub Pages setup
 
-Production is hosted from this repository at <https://gavinscheu.github.io/Auburn-iRacing/>. Staging will use a separate public repository named `GavinScheu/Auburn-iRacing-dev`, at <https://gavinscheu.github.io/Auburn-iRacing-dev/>. No custom domain is required.
+Production is hosted from this repository at <https://auburn-iracing.github.io/Auburn-iRacing/>. Staging will use a separate public repository named `Auburn-iRacing/Auburn-iRacing-dev`, at <https://auburn-iracing.github.io/Auburn-iRacing-dev/>. No custom domain is required.
 
 To enable deployments:
 
