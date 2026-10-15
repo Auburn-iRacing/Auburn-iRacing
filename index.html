@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The Auburn iRacing team hub: race-prep resources, team links, and tools."
+    />
+    <meta name="theme-color" content="#0c2340" />
+    <title>Auburn iRacing | Team Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Auburn iRacing team hub home">
+        <span class="brand__mark" aria-hidden="true">AU</span>
+        <span class="brand__name">Auburn <strong>iRacing</strong></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#resources">Team resources</a>
+        <a href="#in-the-works">In the works</a>
+        <a class="site-nav__cta" href="#resources">Get race ready <span aria-hidden="true">↘</span></a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img
+          class="hero__image"
+          src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=2200&q=85"
+          alt="Race car driving on a circuit"
+          fetchpriority="high"
+        />
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__line"></span> Auburn, Alabama · Sim racing</p>
+          <h1 id="hero-title">Auburn<br /><span>iRacing</span></h1>
+          <p class="hero__copy">
+            Your starting point for team links, race preparation, and everything we build next.
+          </p>
+          <a class="button button--orange" href="#resources">
+            Explore team resources <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <p class="hero__caption"><span>01</span> ONE TEAM. ONE PLACE TO START.</p>
+      </section>
+
+      <section class="resources section-wrap" id="resources" aria-labelledby="resources-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--dark">Your race-day toolkit</p>
+            <h2 id="resources-title">Team resources<span class="heading-period">.</span></h2>
+          </div>
+          <p class="section-heading__copy">
+            The places we go to prepare, connect, and compete. More team links will show up here as they’re ready.
+          </p>
+        </div>
+
+        <div class="resource-grid">
+          <a class="resource-card" data-resource="garage61" aria-label="Garage61, telemetry and lap analysis">
+            <span class="resource-card__top"><span class="resource-card__index">01 / ANALYZE</span><span class="resource-card__arrow" aria-hidden="true">↗</span></span>
+            <span class="resource-card__title">Garage61</span>
+            <span class="resource-card__description">Telemetry, lap comparisons, and shared data.</span>
+            <span class="resource-card__status" data-link-status>Loading link…</span>
+          </a>
+
+          <a class="resource-card" data-resource="iracing" aria-label="iRacing, official racing platform">
+            <span class="resource-card__top"><span class="resource-card__index">02 / COMPETE</span><span class="resource-card__arrow" aria-hidden="true">↗</span></span>
+            <span class="resource-card__title">iRacing</span>
+            <span class="resource-card__description">The official sim platform where we race.</span>
+            <span class="resource-card__status" data-link-status>Loading link…</span>
+          </a>
+
+          <a class="resource-card" data-resource="discord" aria-label="Team Discord invite">
+            <span class="resource-card__top"><span class="resource-card__index">03 / CONNECT</span><span class="resource-card__arrow" aria-hidden="true">↗</span></span>
+            <span class="resource-card__title">Team Discord</span>
+            <span class="resource-card__description">Team chat, race coordination, and announcements.</span>
+            <span class="resource-card__status" data-link-status>Loading link…</span>
+          </a>
+
+          <a class="resource-card" data-resource="notebook" aria-label="Competition notebook">
+            <span class="resource-card__top"><span class="resource-card__index">04 / PREPARE</span><span class="resource-card__arrow" aria-hidden="true">↗</span></span>
+            <span class="resource-card__title">Competition notebook</span>
+            <span class="resource-card__description">The team's shared notes for race preparation.</span>
+            <span class="resource-card__status" data-link-status>Loading link…</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="future" id="in-the-works" aria-labelledby="future-title">
+        <div class="future__inner section-wrap">
+          <div class="future__intro">
+            <p class="eyebrow eyebrow--light">Built by the team</p>
+            <h2 id="future-title">More tools.<br /><span>Better race prep.</span></h2>
+            <p>We’re creating a home for useful team-built tools, with room to grow as our needs take shape.</p>
+          </div>
+          <div class="future__list" aria-label="Planned team tools">
+            <div class="future-item"><span class="future-item__number">01</span><span>Fuel planning</span><span class="future-item__status">Planned</span></div>
+            <div class="future-item"><span class="future-item__number">02</span><span>Stint sheets</span><span class="future-item__status">Planned</span></div>
+            <div class="future-item"><span class="future-item__number">03</span><span>iRacing SDK integrations</span><span class="future-item__status">Exploring</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--footer" href="#top">
+        <span class="brand__mark" aria-hidden="true">AU</span>
+        <span class="brand__name">Auburn <strong>iRacing</strong></span>
+      </a>
+      <p>Made for the Auburn iRacing team.</p>
+      <a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>

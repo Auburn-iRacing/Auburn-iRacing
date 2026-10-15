@@ -1,0 +1,44 @@
+name: Deploy production site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: production-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production source
+        uses: actions/checkout@v4
+
+      - name: Enable and configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Build production site
+        run: bash scripts/build-static-site.sh . _site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy production site
+        id: deployment
+        uses: actions/deploy-pages@v4
