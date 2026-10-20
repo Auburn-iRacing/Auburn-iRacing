@@ -55,25 +55,392 @@
     </aside>
 
     <main id="main-content">
-      <section class="hero" id="top" aria-labelledby="hero-title">
+      <section class="hero hero--champions" id="top" aria-labelledby="hero-title">
         <img
           class="hero__image"
-          src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=2200&q=85"
-          alt="Race car driving on a circuit"
+          src="assets/images/spring-cil-cup-champions.png"
+          alt="Auburn iRacing's championship-winning stock car from the 2026 Spring CiL Cup"
           fetchpriority="high"
         />
         <div class="hero__shade" aria-hidden="true"></div>
         <div class="hero__content">
-          <p class="eyebrow"><span class="eyebrow__line"></span> Auburn, Alabama · Sim racing</p>
-          <h1 id="hero-title">Auburn<br /><span>iRacing</span></h1>
+          <p class="eyebrow"><span class="eyebrow__line"></span> Auburn iRacing · Championship season</p>
+          <h1 id="hero-title">2026 Spring<br /><span>CiL Cup</span><br />Champions</h1>
           <p class="hero__copy">
-            Your starting point for team links, race preparation, and everything we build next.
+            The car that carried Auburn iRacing to the 2026 Spring CiL Cup Championship.
           </p>
-          <a class="button button--orange" href="#resources">
-            Explore team resources <span aria-hidden="true">↓</span>
+          <a class="button button--orange" href="#schedules">
+            View Fall 2026 schedules <span aria-hidden="true">↓</span>
           </a>
         </div>
         <p class="hero__caption"><span>01</span> ONE TEAM. ONE PLACE TO START.</p>
+      </section>
+
+      <section class="schedule section-wrap" id="schedules" aria-labelledby="schedule-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--dark">Fall 2026 · race calendar</p>
+            <h2 id="schedule-title">CiL schedules<span class="heading-period">.</span></h2>
+          </div>
+          <p class="section-heading__copy">
+            Recent completed results come first in each series. Scroll for older finishes, or expand upcoming races to see what is next.
+          </p>
+        </div>
+
+        <div class="schedule-legend" aria-label="Race status legend">
+          <span><span class="race-status race-status--complete" aria-hidden="true"></span> Completed</span>
+          <span><span class="race-status race-status--upcoming" aria-hidden="true"></span> Upcoming</span>
+          <span class="schedule-legend__note">Add the finish, driver(s), and engineer(s) as results come in.</span>
+        </div>
+
+        <div class="schedule-grid">
+          <section class="schedule-series schedule-series--cup" aria-labelledby="cup-title">
+            <header class="schedule-series__header">
+              <p class="eyebrow">CiL · Monday nights</p>
+              <h3 id="cup-title">College Cup Series</h3>
+            </header>
+            <div class="schedule-list-heading"><h4>Recent finishes</h4><span>Newest first</span></div>
+            <ol class="race-list" tabindex="0" aria-label="College Cup Series completed results, newest first">
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-08-24">Aug 24</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>The Duels @ Atlanta <span class="race-card__note">Non-points</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-08-31">Aug 31</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>EchoPark Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-07">Sep 7</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Michigan International Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-14">Sep 14</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Kentucky Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-21">Sep 21</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Bristol Motor Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-28">Sep 28</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Watkins Glen International</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P3</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Reece Baham</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Lars Renlund, Jackson Marconnet</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-05">Oct 5</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Las Vegas Motor Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P7</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Logan Smith</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Lars Renlund, Jackson Marconnet</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-12">Oct 12</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Kansas Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P3</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Logan Smith</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Lars Renlund, Gavin Scheu, Geo Grytz</dd></div>
+                </dl>
+              </li>
+              <li class="race-card race-card--highlight">
+                <div class="race-card__top"><time datetime="2026-10-19">Oct 19</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Talladega Superspeedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P4</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Andrew McGill</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Lars Renlund, Jackson Marconnet, Gavin Scheu, Sophia Dunn</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-26">Oct 26</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Driver vote: Gateway or Road America <span class="race-card__note">Track TBD</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-02">Nov 2</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Homestead-Miami Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-09">Nov 9</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Auto Club Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-16">Nov 16</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Charlotte Motor Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+            </ol>
+            <p class="schedule-scroll-hint">Scroll for older completed races ↓</p>
+            <details class="upcoming-races">
+              <summary><span>Upcoming races</span><span class="upcoming-races__next"></span></summary>
+              <ol class="upcoming-race-list" aria-label="Upcoming College Cup Series races"></ol>
+            </details>
+          </section>
+
+          <section class="schedule-series schedule-series--sportscar" aria-labelledby="sportscar-title">
+            <header class="schedule-series__header">
+              <p class="eyebrow">CiL · Wednesday nights</p>
+              <h3 id="sportscar-title">Collegiate Sportscar Challenge</h3>
+            </header>
+            <div class="schedule-list-heading"><h4>Recent finishes</h4><span>Newest first</span></div>
+            <ol class="race-list" tabindex="0" aria-label="Collegiate Sportscar Challenge completed results, newest first">
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-08-26">Aug 26</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Orientation GP @ Oulton Park <span class="race-card__note">Non-points</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Kamron Yousuf</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-02">Sep 2</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Virginia International Raceway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-09">Sep 9</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Suzuka International Racing Course</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P2 (Race 1), P3 (Race 2)</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Pierce Hanley (P2), Reece Baham (P3)</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Lars Renlund</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-23">Sep 23</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Michelin Raceway Road Atlanta</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Pierce Hanley, Kamron Yousuf</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-14">Oct 14</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Indianapolis Motor Speedway</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P2 (Race 1), P5 (Race 2)</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Pierce Hanley</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Lars, Sophia, Ford, Anna, and Jake</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-21">Oct 21</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Watkins Glen International</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-04">Nov 4</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Red Bull Ring</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-18">Nov 18</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Imola Circuit</h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+            </ol>
+            <p class="schedule-scroll-hint">Scroll for older completed races ↓</p>
+            <details class="upcoming-races">
+              <summary><span>Upcoming races</span><span class="upcoming-races__next"></span></summary>
+              <ol class="upcoming-race-list" aria-label="Upcoming Collegiate Sportscar Challenge races"></ol>
+            </details>
+          </section>
+
+          <section class="schedule-series schedule-series--academy" aria-labelledby="academy-title">
+            <header class="schedule-series__header">
+              <p class="eyebrow">CiL · Thursday nights</p>
+              <h3 id="academy-title">Collegiate Academy Series</h3>
+            </header>
+            <div class="schedule-list-heading"><h4>Recent finishes</h4><span>Newest first</span></div>
+            <ol class="race-list" tabindex="0" aria-label="Collegiate Academy Series completed results, newest first">
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-08-27">Aug 27</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>The Trios @ Charlotte Roval <span class="race-card__note">Non-points · Mazda MX-5 Cup</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-03">Sep 3</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>VIR - North <span class="race-card__note">Mazda MX-5 Cup</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-09-10">Sep 10</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Summit Point Motorsports Park <span class="race-card__note">Mazda MX-5 Cup</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P1</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Micah Farmer</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>Gavin Scheu, Lars Renlund, Jackson Marconnet</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-01">Oct 1</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Tsukuba Circuit <span class="race-card__note">Toyota GR86</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>P1 (Race 1), P2 (Race 2)</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Micah Farmer</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>None</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-08">Oct 8</time><span class="race-status-label race-status-label--complete">Completed</span></div>
+                <h4>Oulton Park - Island <span class="race-card__note">Toyota GR86</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>Micah Farmer</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-10-29">Oct 29</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Lime Rock Park <span class="race-card__note">BMW M2 Racing (G87)</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-05">Nov 5</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Okayama International Circuit <span class="race-card__note">BMW M2 Racing (G87)</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+              <li class="race-card">
+                <div class="race-card__top"><time datetime="2026-11-19">Nov 19</time><span class="race-status-label race-status-label--upcoming">Upcoming</span></div>
+                <h4>Watkins Glen International - Boot <span class="race-card__note">Driver vehicle vote</span></h4>
+                <dl class="race-record">
+                  <div><dt>Finish</dt><dd>—</dd></div>
+                  <div><dt>Driver(s)</dt><dd>—</dd></div>
+                  <div class="race-record__engineers"><dt>Race engineer(s)</dt><dd>—</dd></div>
+                </dl>
+              </li>
+            </ol>
+            <p class="schedule-scroll-hint">Scroll for older completed races ↓</p>
+            <details class="upcoming-races">
+              <summary><span>Upcoming races</span><span class="upcoming-races__next"></span></summary>
+              <ol class="upcoming-race-list" aria-label="Upcoming Collegiate Academy Series races"></ol>
+            </details>
+          </section>
+        </div>
+
+        <section class="special-events" aria-labelledby="special-events-title">
+          <div class="special-events__heading">
+            <div>
+              <p class="eyebrow eyebrow--light">Endurance &amp; invitational races</p>
+              <h3 id="special-events-title">Special events</h3>
+            </div>
+            <p>The latest special event is featured. Use the history dropdown for previous events.</p>
+          </div>
+          <article class="special-event special-event--featured">
+            <div class="special-event__result">
+              <span class="special-event__label">Special event · Chevrolet</span>
+              <h4>8 Hours of Indianapolis</h4>
+              <p class="special-event__finish">P3</p>
+              <span class="special-event__date">Date not shown</span>
+            </div>
+            <dl class="special-event__details">
+              <div><dt>Drivers</dt><dd>Kamron Yousuf, Nathan Roth</dd></div>
+              <div><dt>Race engineers</dt><dd>Anna Hancock, Yiannis Voutgaridis, Sophia Dunn, Geo Grytz</dd></div>
+            </dl>
+          </article>
+          <details class="special-event-history">
+            <summary>Previous special events <span>1 archived</span></summary>
+            <ol class="special-event-history__list" aria-label="Previous special event results">
+              <li>
+                <article class="special-event">
+                  <div class="special-event__result">
+                    <span class="special-event__label">Special event</span>
+                    <h4>Spa 24 Hours</h4>
+                    <time class="special-event__date" datetime="2026-07-10">July 10, 2026</time>
+                  </div>
+                  <dl class="special-event__details">
+                    <div><dt>Drivers</dt><dd>Kamron Yousuf, Pierce Hanley, Jason Satterlee, Stephen Russell, Nathan Roth, Micah Farmer, Barrett Schluckabier</dd></div>
+                    <div><dt>Race engineers</dt><dd>Lars Renlund, Jackson Marconnet</dd></div>
+                  </dl>
+                </article>
+              </li>
+            </ol>
+            <p class="special-event-history__empty">Older special events will be added here as results are shared.</p>
+          </details>
+        </section>
       </section>
 
       <section class="resources section-wrap" id="resources" aria-labelledby="resources-title">
@@ -171,22 +538,22 @@
           </div>
           <div class="sponsor-grid">
             <a class="sponsor-link" href="https://www.crawfordwillisgroup.com/" target="_blank" rel="noopener noreferrer">
-              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-logo-slot"><img src="assets/images/crawford-willis.png" alt="" loading="lazy" /></span>
               <span class="sponsor-link__name">Crawford &amp; Willis</span>
               <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
             </a>
             <a class="sponsor-link" href="https://www.alabamapumper.com/" target="_blank" rel="noopener noreferrer">
-              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-logo-slot"><img src="assets/images/alabama-pumper.png" alt="" loading="lazy" /></span>
               <span class="sponsor-link__name">Alabama Pumper</span>
               <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
             </a>
             <a class="sponsor-link" href="https://mobincbhm.com/" target="_blank" rel="noopener noreferrer">
-              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-logo-slot"><img src="assets/images/mob-inc.png" alt="" loading="lazy" /></span>
               <span class="sponsor-link__name">MOB Inc.</span>
               <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
             </a>
             <a class="sponsor-link" href="https://www.theroofingdudes.com/" target="_blank" rel="noopener noreferrer">
-              <span class="sponsor-logo-slot">Logo coming soon</span>
+              <span class="sponsor-logo-slot"><img src="assets/images/the-roofing-dudes.png" alt="" loading="lazy" /></span>
               <span class="sponsor-link__name">The Roofing Dudes</span>
               <span class="sponsor-link__visit">Visit sponsor <span aria-hidden="true">↗</span></span>
             </a>
