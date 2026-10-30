@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Auburn iRacing competition resources and race-preparation tools." />
     <meta name="theme-color" content="#0c2340" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
     <title>Competition | Auburn iRacing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/fuel-calculator.css" />
     <script src="assets/js/config.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script type="module" src="assets/js/fuel-calculator.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -65,7 +69,7 @@
           <h2 id="notebook-title">Competition Notebooks</h2>
           <p>Shared preparation material, strategies, and post-race notes for both CiL Cup and Sportscar series.</p>
         </div>
-        <div class="notebook-panel__links" style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+        <div class="notebook-panel__links">
           <a class="button button--navy notebook-panel__link"
              href="https://docs.google.com/document/d/e/2PACX-1vTF9nKEb70ibyM7cKlFvIKmdqsoiuKOsOppNExQmvf1kVAH5VGoI2Nn2W7ZeWpK-X3klsBaabFCPEac/pub"
              target="_blank" rel="noopener noreferrer"
@@ -84,23 +88,181 @@
         <section class="fuel-planner" aria-labelledby="fuel-title">
           <div class="tool-heading">
             <div>
-              <p class="eyebrow eyebrow--dark">Race strategy tool</p>
+              <p class="eyebrow eyebrow--dark">Live race strategy</p>
               <h2 id="fuel-title">Fuel calculator</h2>
             </div>
-            <span class="future-item__status">Planned</span>
+            <span class="future-item__status">Client-side</span>
           </div>
           <p class="fuel-planner__description">
-            A dedicated workspace for estimating fuel needs in both lap-count and timed races.
+            Enter your tank size and green-flag fuel burn to calculate fuel remaining, pit stops, and a pit window. Caution burn defaults to half of green-flag burn; enter a different rate to override it. Update your completed lap and log cautions and pit stops during the race to keep the strategy current. Calculations stay in this browser.
           </p>
-          <div class="fuel-placeholder" aria-label="Reserved space for the future fuel calculator">
-            <div class="fuel-placeholder__topline"><span>Calculator workspace</span><span>Under development</span></div>
-            <div class="fuel-input-outline" aria-hidden="true">
-              <span>Current lap</span>
-              <span>Average fuel burn</span>
-              <span>Tank size</span>
-              <span>Race format</span>
+          <form class="fuel-calculator" data-fuel-calculator novalidate>
+            <section class="fuel-setup" aria-labelledby="fuel-setup-title">
+              <div class="fuel-section-heading">
+                <h3 id="fuel-setup-title">Race setup</h3>
+                <p><span class="fuel-required" aria-hidden="true">*</span> Required to calculate. Setup is saved in this browser only.</p>
+              </div>
+              <div class="fuel-setup-grid">
+                <div class="fuel-field">
+                  <label for="fuel-tank">Tank capacity <span class="fuel-required" aria-hidden="true">*</span></label>
+                  <div class="fuel-unit-row">
+                    <input id="fuel-tank" type="number" min="0.1" max="100000" step="0.1" inputmode="decimal" required aria-describedby="fuel-unit-help" />
+                    <select id="fuel-unit" aria-label="Fuel unit">
+                      <option value="gal" selected>Gallons</option>
+                      <option value="L">Liters</option>
+                    </select>
+                  </div>
+                  <p class="fuel-field__help" id="fuel-unit-help">Display unit for all fuel values.</p>
+                </div>
+                <div class="fuel-field">
+                  <label for="fuel-burn">Green-flag fuel burn per lap <span class="fuel-required" aria-hidden="true">*</span></label>
+                  <input id="fuel-burn" type="number" min="0.001" max="10000" step="0.001" inputmode="decimal" required />
+                </div>
+                <div class="fuel-field">
+                  <label for="fuel-caution-burn">Caution fuel burn per lap</label>
+                  <input id="fuel-caution-burn" type="number" min="0.001" max="10000" step="0.001" inputmode="decimal" placeholder="Default: half of green-flag burn" aria-describedby="fuel-caution-help" />
+                  <p class="fuel-field__help" id="fuel-caution-help">Leave blank for the calculated half-burn default, or enter a custom caution burn per lap.</p>
+                </div>
+                <div class="fuel-field">
+                  <label for="fuel-total-laps">Total race laps <span class="fuel-required" aria-hidden="true">*</span></label>
+                  <input id="fuel-total-laps" type="number" min="1" max="100000" step="1" inputmode="numeric" required />
+                </div>
+                <div class="fuel-field">
+                  <label for="fuel-margin">Safety margin (laps) <span class="fuel-required" aria-hidden="true">*</span></label>
+                  <input id="fuel-margin" type="number" min="0" max="100000" step="0.1" value="1" inputmode="decimal" required />
+                </div>
+                <div class="fuel-field">
+                  <label for="fuel-tire-max">Maximum tire stint (laps, optional)</label>
+                  <input id="fuel-tire-max" type="number" min="1" max="100000" step="1" inputmode="numeric" />
+                  <p class="fuel-field__help">Leave blank if tires do not limit the stint.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="fuel-live" aria-labelledby="fuel-live-title">
+              <div class="fuel-section-heading">
+                <h3 id="fuel-live-title">Live race state</h3>
+                <p>Update these values as the race progresses.</p>
+              </div>
+              <div class="fuel-live-grid">
+                <div class="fuel-field">
+                  <label for="fuel-current-lap">Current completed lap <span class="fuel-required" aria-hidden="true">*</span></label>
+                  <div class="fuel-current-lap">
+                    <button type="button" data-lap-step="-1" aria-label="Decrease current lap">−</button>
+                    <input id="fuel-current-lap" type="number" min="0" max="100000" step="1" value="0" inputmode="numeric" required />
+                    <button type="button" data-lap-step="1" aria-label="Increase current lap">+</button>
+                  </div>
+                </div>
+                <div class="fuel-field">
+                  <span class="fuel-field__label">Current fuel source</span>
+                  <div class="fuel-mode" role="radiogroup" aria-label="Current fuel source">
+                    <label><input id="fuel-mode-estimate" type="radio" name="fuel-mode" value="estimate" checked /> Estimate from pit log</label>
+                    <label><input id="fuel-mode-manual" type="radio" name="fuel-mode" value="manual" /> Enter manually</label>
+                  </div>
+                  <div class="fuel-field" id="fuel-manual-group" hidden>
+                    <label for="fuel-manual">Current fuel <span class="fuel-required" id="fuel-manual-required" aria-hidden="true" hidden>*</span></label>
+                    <input id="fuel-manual" type="number" min="0" max="100000" step="0.1" inputmode="decimal" />
+                  </div>
+                </div>
+                <div class="fuel-field">
+                  <label for="fuel-expected-caution">Expected remaining caution laps <span class="fuel-required" aria-hidden="true">*</span></label>
+                  <input id="fuel-expected-caution" type="number" min="0" max="100000" step="1" value="0" inputmode="numeric" required />
+                </div>
+                <div class="fuel-field">
+                  <span class="fuel-field__label">Last tire change lap</span>
+                  <output id="fuel-last-tire-lap">0</output>
+                  <p class="fuel-field__help">Updated automatically from pit stops marked “Tires changed.”</p>
+                </div>
+              </div>
+            </section>
+
+            <div class="fuel-log-grid">
+              <section class="fuel-log-panel" aria-labelledby="caution-log-title">
+                <div class="fuel-section-heading">
+                  <h3 id="caution-log-title">Caution log</h3>
+                  <p>Overlapping ranges count once.</p>
+                </div>
+                <div class="fuel-log-form">
+                  <div class="fuel-field">
+                    <label for="caution-start">First caution lap</label>
+                    <input id="caution-start" type="number" min="1" max="100000" step="1" inputmode="numeric" />
+                  </div>
+                  <div class="fuel-field">
+                    <label for="caution-length">Number of laps</label>
+                    <input id="caution-length" type="number" min="1" max="100000" step="1" value="1" inputmode="numeric" />
+                  </div>
+                  <button class="fuel-add-button" id="add-caution" type="button">Add caution</button>
+                </div>
+                <ol class="fuel-log-list" id="caution-log" aria-label="Logged caution ranges"></ol>
+              </section>
+
+              <section class="fuel-log-panel" aria-labelledby="pit-log-title">
+                <div class="fuel-section-heading">
+                  <h3 id="pit-log-title">Pit stop log</h3>
+                  <p>Leave fuel amount blank for a full tank.</p>
+                </div>
+                <div class="fuel-log-form">
+                  <div class="fuel-field">
+                    <label for="pit-lap">Pit stop lap</label>
+                    <input id="pit-lap" type="number" min="1" max="100000" step="1" inputmode="numeric" />
+                  </div>
+                  <div class="fuel-field">
+                    <label for="pit-fill">Fuel after stop (<span data-fuel-unit-label>L</span>)</label>
+                    <input id="pit-fill" type="number" min="0" max="100000" step="0.1" inputmode="decimal" placeholder="Full tank" />
+                  </div>
+                  <div class="fuel-field">
+                    <label for="pit-tire-count">Tires</label>
+                    <select id="pit-tire-count">
+                      <option value="0">No tires</option>
+                      <option value="2">2 tires</option>
+                      <option value="4">4 tires</option>
+                    </select>
+                  </div>
+                  <button class="fuel-add-button" id="add-pit-stop" type="button">Add pit stop</button>
+                </div>
+                <ol class="fuel-log-list" id="pit-log" aria-label="Logged pit stops"></ol>
+              </section>
             </div>
-            <p>Planned for laps remaining and time remaining races.</p>
+
+            <section class="fuel-results" aria-labelledby="fuel-results-title" aria-live="polite">
+              <h3 id="fuel-results-title">Live strategy</h3>
+              <dl class="fuel-results__grid">
+                <div class="fuel-result">
+                  <dt id="fuel-estimated-label">Estimated fuel</dt>
+                  <dd id="fuel-result-estimated">—</dd>
+                </div>
+                <div class="fuel-result">
+                  <dt>Laps of fuel left</dt>
+                  <dd id="fuel-result-laps">—</dd>
+                </div>
+                <div class="fuel-result">
+                  <dt>Stops needed</dt>
+                  <dd id="fuel-result-stops">—</dd>
+                </div>
+                <div class="fuel-result">
+                  <dt>Earliest next pit lap</dt>
+                  <dd id="fuel-result-earliest">—</dd>
+                </div>
+                <div class="fuel-result">
+                  <dt>Latest next pit lap</dt>
+                  <dd id="fuel-result-latest">—</dd>
+                </div>
+                <div class="fuel-result">
+                  <dt>Binding constraint</dt>
+                  <dd id="fuel-result-binding">—</dd>
+                </div>
+                <div class="fuel-result fuel-result--status">
+                  <dt>Pit window</dt>
+                  <dd id="fuel-result-status" data-status="setup">Enter required race setup</dd>
+                </div>
+              </dl>
+              <p class="fuel-warning" id="fuel-warnings" role="status" hidden></p>
+              <div class="fuel-results__footer">
+                <p>Estimates are for race strategy only. Confirm against live fuel and race conditions.</p>
+                <button class="fuel-reset-button" id="reset-fuel-calculator" type="button">Reset calculator</button>
+              </div>
+            </section>
+          </form>
           </div>
         </section>
 
