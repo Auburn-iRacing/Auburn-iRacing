@@ -237,7 +237,7 @@ a:focus-visible {
 .heading-period { color: var(--orange); }
 .section-heading__copy { max-width: 400px; margin: 0 0 4px; color: var(--muted); font-size: 14px; }
 
-.resource-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
 .resource-card {
   display: flex;

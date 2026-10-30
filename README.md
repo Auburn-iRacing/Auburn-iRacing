@@ -16,7 +16,7 @@ Then open <http://localhost:8000> in a browser.
 
 ## Configure team links
 
-Edit `assets/js/config.js` to update the team's Discord invite or add the competition notebook URL. Garage61 and iRacing are already configured. Only HTTPS links are enabled by the site.
+Edit `assets/js/config.js` to add or update team resource URLs, such as the competition notebook. Garage61 and iRacing are already configured. Only HTTPS links are enabled by the site.
 
 ## Project layout
 
