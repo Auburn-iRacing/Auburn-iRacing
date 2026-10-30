@@ -14,9 +14,15 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000> in a browser.
 
+Run the calculator's unit tests with Node.js:
+
+```sh
+node --test
+```
+
 ## Configure team links
 
-Edit `assets/js/config.js` to update the team's Discord invite or add the competition notebook URL. Garage61 and iRacing are already configured. Only HTTPS links are enabled by the site.
+Edit `assets/js/config.js` to add or update team resource URLs, such as the competition notebook. Garage61 and iRacing are already configured. Only HTTPS links are enabled by the site.
 
 ## Project layout
 
@@ -26,11 +32,14 @@ Edit `assets/js/config.js` to update the team's Discord invite or add the compet
 ├── competition.html      # Competition notebook and tools workspace
 ├── .github/workflows/    # GitHub Pages deployment workflow
 ├── scripts/              # Static site build helpers
+├── tests/                # Node.js unit tests for calculator logic
 └── assets/
-	├── css/styles.css    # Layout, responsive behavior, and visual theme
+	├── css/              # Shared site styles and calculator styles
 	└── js/
 		├── config.js     # Team-managed resource URLs
-		└── main.js       # Link validation and accessible link states
+		├── main.js       # Link validation and accessible link states
+		├── fuel-calculator.js # Browser UI and interaction logic
+		└── fuel-strategy.mjs  # Pure fuel and pit-window calculations
 ```
 
 ## Branch and release flow
