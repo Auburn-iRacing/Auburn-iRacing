@@ -237,7 +237,7 @@ a:focus-visible {
 .heading-period { color: var(--orange); }
 .section-heading__copy { max-width: 400px; margin: 0 0 4px; color: var(--muted); font-size: 14px; }
 
-.resource-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
 .resource-card {
   display: flex;
@@ -359,6 +359,7 @@ a:focus-visible {
 }
 
 .notebook-panel__copy .eyebrow { margin-bottom: 8px; }
+.notebook-panel__links { display: flex; flex-wrap: wrap; gap: .75rem; }
 .notebook-panel h2,.fuel-planner h2,.competition-projects h2 { margin: 0; color: var(--navy); font-family: var(--font-display); font-size: 34px; font-weight: 700; line-height: 1; text-transform: uppercase; }
 .notebook-panel__copy > p:last-child { max-width: 520px; margin: 9px 0 0; color: var(--muted); font-size: 13px; }
 .button--navy { min-width: 178px; background: var(--navy); color: var(--white); }
@@ -370,12 +371,6 @@ a:focus-visible {
 .tool-heading .eyebrow { margin-bottom: 9px; }
 .tool-heading > .section-heading__copy { max-width: 330px; }
 .fuel-planner__description { max-width: 620px; margin: 13px 0 22px; color: var(--muted); font-size: 13px; }
-.fuel-placeholder { display: flex; min-height: 280px; flex-direction: column; justify-content: center; padding: 24px; border: 1px dashed #aab8c1; background: var(--paper); }
-.fuel-placeholder__topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #536d82; font-size: 10px; font-weight: 700; text-transform: uppercase; }
-.fuel-input-outline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
-.fuel-input-outline span { display: flex; min-height: 55px; align-items: center; padding: 12px; border: 1px solid var(--line); background: var(--white); color: #71818c; font-size: 11px; }
-.fuel-placeholder > p { margin: 15px 0 0; color: var(--muted); font-size: 11px; }
-
 .competition-projects { padding: 13px 0 0; }
 .competition-projects .tool-heading { margin-bottom: 22px; }
 .competition-projects h2 { font-size: 40px; }
@@ -476,10 +471,6 @@ a:focus-visible {
   .notebook-panel h2,.fuel-planner h2 { font-size: 29px; }
   .notebook-panel__link { justify-self: start; }
   .fuel-planner { padding: 22px 18px; }
-  .fuel-placeholder { min-height: 290px; padding: 17px; }
-  .fuel-placeholder__topline { align-items: flex-start; flex-direction: column; gap: 6px; }
-  .fuel-input-outline { grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 15px; }
-  .fuel-input-outline span { min-height: 58px; padding: 9px; font-size: 10px; }
   .competition-projects .tool-heading { align-items: flex-start; flex-direction: column; }
   .competition-projects h2 { font-size: 34px; }
   .project-slots { grid-template-columns: 1fr; }
